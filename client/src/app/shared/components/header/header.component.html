@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="header-wrapper">
+    <div class="logo">
+      <a href=""><img src="https://via.placeholder.com/50" alt=""></a>
+    </div>
+    <div class="menu">
+      <div class="authorized" *ngIf="!isLoggedIn">
+        <p class="login" id="googleBtn">Войти</p>
+      </div>
+      <div class="not-authorized" *ngIf="isLoggedIn">
+        <p class="username">{{userName}}</p>
+        <p class="logout" (click)="logout()">Выйти</p>
+      </div>
+    </div>
+  </div>
+</div>

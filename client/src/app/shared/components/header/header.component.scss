@@ -1,0 +1,32 @@
+.header {
+  background-color: #b3b3cc;
+}
+
+.header-wrapper {
+  width: 94%;
+  height: 80px;
+  max-width: 1480px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authorized, .not-authorized {
+  display: flex;
+  float: right;
+}
+
+.username::after {
+  content: "";
+  width: 2px;
+  height: 12px;
+  background-color: gray;
+  display: inline-block;
+  margin: auto 4px;
+}
+
+.login, .logout {
+  cursor: pointer;
+  width: max-content;
+}

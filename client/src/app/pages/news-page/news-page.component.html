@@ -1,0 +1,44 @@
+<div class="wrapper">
+
+  <div class="custom-breadcrumbs" *ngIf="isLoggedIn">
+    <a [routerLink]="['/create']" class="add-news-btn">Добавить новость</a>
+  </div>
+
+  <div class="news">
+    <ul>
+      <li *ngFor="let n of news">
+        <div class="news-info">
+          <h2>{{n.title}}</h2>
+          <p class="author"><span>{{n.createdByUserName}}</span> ( {{n.jobTimeDiffCalc}} )</p>
+          <p>
+            {{n.content.substr(0, 200)}}...
+            <a class="more-details" href="{{'/news-single?id=' + n._id}}" (click)="onEvent($event, n); false">подробнее</a>
+            <!--<span class="more-details">подробнее</span>-->
+          </p>
+        </div>
+        <div class="news-edit" *ngIf="userId === n.createdBy">
+          <i class="fa fa-edit" aria-hidden="true" (click)="updateNews(n)"></i>
+          <i class="fa fa-trash" aria-hidden="true" (click)="removeNewsToggle(n)"></i>
+        </div>
+      </li>
+    </ul>
+
+    <!--remove popup start-->
+    <div id="blockUIConfirm" class="blockUIConfirm" *ngIf="isVisibleRemoveNewsPopup">
+      <div class="blockui-mask"></div>
+      <div class="rowDialogBody">
+        <div class="confirm-header row-dialog-hdr-success">
+          Вы уверены, что хотите удалить этот элемент?
+        </div>
+        <div class="confirm-btn-panel pull-right">
+          <div class="btn-holder pull-right">
+            <button (click)="removeNews()">Да</button>
+            <button (click)="isVisibleRemoveNewsPopup = false">Нет</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--remove popup end-->
+  </div>
+
+</div>

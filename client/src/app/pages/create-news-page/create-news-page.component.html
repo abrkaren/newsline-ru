@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <div class="custom-breadcrumbs">
+    <a [routerLink]="['/news']" class="add-news-btn">Новости</a>
+  </div>
+
+  <div class="news">
+    <h4>Создать новость</h4>
+
+    <form [formGroup]="createNewsForm" (ngSubmit)="submitCreateNewsForm()">
+      <div class="form-control">
+        <p>Заголовок</p>
+        <input type="text" formControlName="title">
+        <span class="error-title" *ngIf="createNewsForm.get('title').invalid && (createNewsForm.get('title').dirty || createNewsForm.get('title').touched)">Заголовок отсутствует</span>
+      </div>
+      <div class="form-control">
+        <p>Содержание новости</p>
+        <textarea name="" id="" cols="30" rows="10" formControlName="content"></textarea>
+        <span class="error-title" *ngIf="createNewsForm.get('content').invalid && (createNewsForm.get('content').dirty || createNewsForm.get('content').touched)">Содержание отсутствует</span>
+      </div>
+      <button type="submit" [disabled]="createNewsForm.invalid">Создать</button>
+    </form>
+  </div>
+
+</div>

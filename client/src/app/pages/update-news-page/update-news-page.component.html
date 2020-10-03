@@ -1,0 +1,33 @@
+<div class="wrapper">
+
+  <div class="custom-breadcrumbs">
+    <a [routerLink]="['/news']" class="add-news-btn">Новости</a>
+  </div>
+
+  <div class="news">
+    <h4>Редактировать новость</h4>
+
+    <form [formGroup]="updateNewsForm" (ngSubmit)="submitUpdateNewsForm()">
+      <div class="form-control">
+        <p>Заголовок</p>
+        <input type="text" formControlName="title">
+        <span class="error-title" *ngIf="updateNewsForm.get('title').invalid && (updateNewsForm.get('title').dirty || updateNewsForm.get('title').touched)">Заголовок отсутствует</span>
+      </div>
+      <div class="form-control">
+        <p>Содержание новости</p>
+        <textarea name="" id="" cols="30" rows="10" formControlName="content"></textarea>
+        <span class="error-title" *ngIf="updateNewsForm.get('content').invalid && (updateNewsForm.get('content').dirty || updateNewsForm.get('content').touched)">Содержание отсутствует</span>
+      </div>
+
+      <button [disabled]="updateNewsForm.invalid" type="submit">Сохранить</button>
+    </form>
+  </div>
+
+  <div class="success-alert" *ngIf="isVisibleSuccessAlert">
+      <div class="alert-success">
+        <i class="start-icon far fa-check-circle faa-tada animated"></i>
+        <strong class="">Отлично сработано!</strong>
+      </div>
+  </div>
+
+</div>

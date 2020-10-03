@@ -1,0 +1,126 @@
+.wrapper {
+  width: 94%;
+  max-width: 1480px;
+  margin: auto;
+}
+
+.custom-breadcrumbs {
+  margin: 20px auto;
+}
+
+.news {
+  position: relative;
+}
+
+.news-info {
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.news-edit {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.news .news-edit i {
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.fa-edit {
+  color: green;
+}
+
+.fa-trash {
+  color: red;
+}
+
+.author {
+  font-size: 14px;
+  margin: 2px auto 10px auto;
+  text-decoration: underline;
+}
+
+
+
+// -- remove popup start --
+.blockUIConfirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 50;
+  //display: none;
+}
+
+.blockui-mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.4;
+}
+
+.rowDialogBody {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 310px;
+  opacity: 1;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.blockUIConfirm button {
+  width: 40px;
+  margin-right: 4px;
+}
+
+.rowDialogBody > div:not(.confirm-body) {
+  padding: 8px 10px;
+}
+
+.confirm-header {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  font-size: 13pt;
+  margin: 0;
+}
+
+.row-dialog-hdr-success {
+  border-top: 4px solid red;
+  border-bottom: 1px solid transparent;
+}
+
+.row-dialog-hdr-info {
+  border-top: 4px solid #5bc0de;
+  border-bottom: 1px solid transparent;
+}
+
+.confirm-body {
+  border-top: 1px solid #ccc;
+  padding:20px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.confirm-btn-panel {
+  width: 100%;
+}
+.row-dialog-btn {
+  cursor: pointer;
+}
+
+.btn-naked {
+  background-color: transparent;
+}
+
+// -- remove popup end --
